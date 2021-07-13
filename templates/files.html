@@ -1,0 +1,10 @@
+<h3>Current directory: {{request.path}}</h3>
+<ul>
+    {% for file in files %}
+    <li>
+        <a href="{{ (request.path + '/' if request.path != '/' else '') + file }}">
+            {{ file + files[file] }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
